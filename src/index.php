@@ -1,2 +1,4 @@
 <?php
-    echo "hihi";
+require "./public/index.php";
+
+session_start();

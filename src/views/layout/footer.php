@@ -1,0 +1,2 @@
+<?
+    echo "Day laf footer";
