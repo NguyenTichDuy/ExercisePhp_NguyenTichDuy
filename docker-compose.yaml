@@ -1,0 +1,46 @@
+version: "3.3"
+services: 
+  app:
+    build:
+      args: 
+        user: nguyentichduy
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: exercisephp
+    volumes: 
+      - ./src:/var/www
+    container_name: exercise-php-app
+    restart: unless-stopped
+    working_dir: /var/www
+    networks: 
+      - exercisephp
+  database:
+    image: mysql:8
+    container_name: exercise-php-db
+    restart: unless-stopped
+    networks: 
+      - exercisephp
+    volumes: 
+      - ./src/dockercompose/mysql:/docker-entrypoint-initdb.d
+    environment: 
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_DATABASE: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+  server:
+    image: nginx:1.19-alpine
+    container_name: exercise-php-server
+    ports:
+      - 8080:80
+    networks: 
+      - exercisephp
+    volumes: 
+      - ./src:/var/www
+      - ./src/dockercompose/nginx:/etc/nginx/conf.d
+    restart: unless-stopped
+networks: 
+  exercisephp:
+    driver: bridge
