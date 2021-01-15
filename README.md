@@ -1,1 +1,25 @@
 # ExercisePhp_NguyenTichDuy
+## Database
+
+### Product
+* name
+* color
+* size
+* quality
+* type
+* price
+### Category
+* idCategory
+* title
+### Cart
+* IdCart
+* UserId
+* CreateDate
+### CartItems
+* Id
+* IdCart
+* idCategory
+* price
+* content
+* discount
+* quality

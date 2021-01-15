@@ -24,6 +24,8 @@ class Core
 
         require_once DBO . "MyPDO.class.php";
         require_once CROUTE_PATH . "Route.class.php";
+
+        // var_dump($_ENV['DB_DATABASE']);
         // $modules = isset($_REQUEST['v']) ? $_REQUEST['v'] : '';
         // $action = isset($_REQUEST['a']) ? $_REQUEST['a'] : '';
 
@@ -41,6 +43,9 @@ class Core
     {
         if (substr($className, -10) == 'Controller') {
             require_once CONTROLLER_PATH . "$className.class.php";
+        }
+        elseif (substr($className, -5) == 'Model') {
+            require_once MODELS_PATH . "$className.class.php"; 
         }
     }
     public static function loadRoute() {

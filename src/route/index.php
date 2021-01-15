@@ -1,12 +1,14 @@
 <?php
 // Add base route (startpage)
+define("LAYOUT_PATH", VIEW_PATH . 'layout' . DS);
+
 Route::add('/', function () {
     $home = new HomeController();
 });
 
-// Simple test route that simulates static html file
 Route::add('/shop', function () {
     $shoping = new ShopingController();
+    $shoping->loadViews();
 });
 
 Route::run('/');
