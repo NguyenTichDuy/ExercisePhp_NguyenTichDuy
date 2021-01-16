@@ -26,13 +26,13 @@
 * 
 
 ## Feature project
-Route: 
+* Route: 
 > Support route with regex
-Autoload file:
+* Autoload file:
 > Support auto load controller, model, view 
-Work all docker:
+* Work all docker:
 > Support docker
-MVC:
+* MVC:
 > Project depend on design pattem MVC
 
 ## Database
