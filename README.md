@@ -63,4 +63,9 @@
 * content
 * discount
 * quality
+## Weakness
+> It takes a long time to construct core,MVC,docker 
+## How to fix
+> Focus on requirements
+
 
