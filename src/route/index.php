@@ -10,5 +10,4 @@ Route::add('/shop', function () {
     $shoping = new ShopingController();
     $shoping->loadViews();
 });
-
 Route::run('/');
