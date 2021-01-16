@@ -1,7 +1,7 @@
 <?php
 class HomeController {
-    private $models;
-    private $views;
+    private $models = [];
+    private $views = [];
 
     public function __construct()
     {

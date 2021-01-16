@@ -9,10 +9,10 @@ class CartShopView extends View
         foreach ($list as $key => $value) {
             echo  "<div class='col-lg-4 col-md-6 mb-4'>
                         <div class='card h-100'>
-                            <a href='#'><img class='card-img-top' src='./public/images/" . $value['image'] . "' alt=''></a>
+                            <a href='http://localhost:8080/shop/". $value['id'] . "'><img class='card-img-top' src='./public/images/" . $value['image'] . "' alt=''></a>
                             <div class='card-body'>
                                 <h4 class='card-title'>
-                                <a href='#'>". $value['name'] . "</a>
+                                <a href='http://localhost:8080/shop/". $value['id'] . "'>". $value['name'] . "</a>
                                 </h4>
                                 <p>Quality: " . $value['quality'] . "</p>
                                 <p class='card-text'>Size: " . $value['size'] ."</p>
