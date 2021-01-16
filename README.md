@@ -6,7 +6,8 @@
 * color
 * size
 * quality
-* type
+* image
+* content
 * price
 ### Category
 * idCategory
@@ -15,11 +16,14 @@
 * IdCart
 * UserId
 * CreateDate
+### product_category
+* id
+* idCategory
+* idProduct
 ### CartItems
 * Id
 * IdCart
 * idCategory
-* price
 * content
 * discount
 * quality
